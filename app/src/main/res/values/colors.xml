@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_blue">#1A237E</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="orange">#FF9800</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    <color name="dark_surface">#121212</color>
+    <color name="light_surface">#FFFFFFFF</color>
+    <color name="gray">#757575</color>
+    <color name="light_gray">#BDBDBD</color>
+    <color name="card_bottom">#1A237E</color>
+    <color name="poster_placeholder">#37474F</color>
+    <color name="nav_item_default">#BDBDBD</color>
+    <color name="nav_item_selected">#FFFFFF</color>
+    <color name="genre_text">#757575</color>
+</resources>
