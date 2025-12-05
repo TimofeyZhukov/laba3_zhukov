@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "titleRu": "Интерстеллар",
+    "titleEn": "Interstellar",
+    "year": 2014,
+    "genres": ["Драма", "Научная фантастика"],
+    "rating": 8.6,
+    "posterPath": "poster_interstellar",
+    "actors": [
+      {"name": "Мэттью МакКонахи", "photo": "actor_matthew"},
+      {"name": "Энн Хэтэуэй", "photo": "actor_anne"},
+      {"name": "Джессика Честейн", "photo": "actor_jessica"}
+    ],
+    "descriptionRu": "Группа исследователей отправляется в космос...",
+    "descriptionEn": "A team of explorers travel through a wormhole in space..."
+  },
+
+  {
+    "id": 2,
+    "titleRu": "Начало",
+    "titleEn": "Inception",
+    "year": 2010,
+    "genres": ["Боевик", "Фантастика"],
+    "rating": 8.8,
+    "posterPath": "poster_inception",
+    "actors": [
+      {"name": "Леонардо ДиКаприо", "photo": "actor_leo"},
+      {"name": "Джозеф Гордон-Левитт", "photo": "actor_joseph"}
+    ],
+    "descriptionRu": "Вор, который крадёт тайны из подсознания...",
+    "descriptionEn": "A thief who steals corporate secrets through the use of dream-sharing technology..."
+  },
+
+  {
+    "id": 3,
+    "titleRu": "Матрица",
+    "titleEn": "The Matrix",
+    "year": 1999,
+    "genres": ["Боевик", "Научная фантастика"],
+    "rating": 8.7,
+    "posterPath": "poster_matrix",
+    "actors": [
+      {"name": "Киану Ривз", "photo": "actor_keanu"},
+      {"name": "Лоренс Фишбёрн", "photo": "actor_laurence"}
+    ],
+    "descriptionRu": "Хакер Нео узнает правду о реальности...",
+    "descriptionEn": "A computer hacker learns about the true nature of his reality..."
+  }
+]
