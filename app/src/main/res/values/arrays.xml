@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="languages_array">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="themes_array">
+        <item>Светлая</item>
+        <item>Тёмная</item>
+    </string-array>
+</resources>
