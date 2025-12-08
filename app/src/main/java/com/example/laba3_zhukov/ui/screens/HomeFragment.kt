@@ -1,11 +1,15 @@
 package com.example.laba3_zhukov.ui.screens
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laba3_zhukov.R
@@ -18,10 +22,11 @@ class HomeFragment : Fragment() {
 
     private lateinit var moviesRecyclerView: RecyclerView
     private lateinit var genresRecyclerView: RecyclerView
+    private lateinit var searchEditText: EditText
     private lateinit var prefs: SharedPrefManager
-
     private var allMovies: List<Movie> = emptyList()
     private var currentFilterGenre: String? = null
+    private var currentSearchQuery: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -33,11 +38,20 @@ class HomeFragment : Fragment() {
 
         moviesRecyclerView = view.findViewById(R.id.moviesRecyclerView)
         genresRecyclerView = view.findViewById(R.id.genresRecyclerView)
-
-        moviesRecyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(requireContext(), 2)
+        searchEditText = view.findViewById(R.id.searchEditText)
+        moviesRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         genresRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-
         loadMovies()
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                currentSearchQuery = s?.toString()?.trim()
+                applyFilters()
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
     private fun loadMovies() {
@@ -78,7 +92,7 @@ class HomeFragment : Fragment() {
 
     private fun applyFilters() {
         val isRussian = prefs.isRussian()
-        val filtered = if (currentFilterGenre.isNullOrEmpty()) {
+        val filteredByGenre = if (currentFilterGenre.isNullOrEmpty()) {
             allMovies
         } else {
             val genreToMatch = currentFilterGenre!!.trim()
@@ -91,7 +105,19 @@ class HomeFragment : Fragment() {
                 movieGenres.any { it.equals(genreToMatch, ignoreCase = true) }
             }
         }
-        val adapter = MovieAdapter(filtered, { movie -> openMovieDetail(movie) }, requireContext())
+
+        val finalFilteredMovies = if (currentSearchQuery.isNullOrEmpty()) {
+            filteredByGenre
+        } else {
+            val query = currentSearchQuery!!.lowercase()
+            filteredByGenre.filter { movie ->
+                val titleRu = movie.titleRu?.lowercase() ?: ""
+                val titleEn = movie.titleEn?.lowercase() ?: ""
+                titleRu.contains(query) || titleEn.contains(query)
+            }
+        }
+
+        val adapter = MovieAdapter(finalFilteredMovies, { movie -> openMovieDetail(movie) }, requireContext())
         moviesRecyclerView.adapter = adapter
     }
 

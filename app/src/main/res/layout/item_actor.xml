@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -12,7 +13,10 @@
         android:layout_height="56dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_actor_placeholder"
-        android:background="@drawable/actor_circle_bg" />
+        android:background="@drawable/actor_circle_bg"
+        android:clipToOutline="true"
+        tools:ignore="NewApi"
+        android:contentDescription="@string/actor_photo" />
 
     <TextView
         android:id="@+id/actorName"
@@ -21,5 +25,6 @@
         android:textSize="12sp"
         android:layout_marginTop="6dp"
         android:maxLines="1"
+        android:ellipsize="end"
         android:textColor="@color/genre_text" />
 </LinearLayout>

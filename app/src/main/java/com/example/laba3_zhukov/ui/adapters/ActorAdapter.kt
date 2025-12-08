@@ -23,9 +23,14 @@ class ActorAdapter(private val items: List<Pair<String, Int>>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: VH, position: Int) {
         val (actorName, drawableId) = items[position]
         holder.name.text = actorName
-        holder.img.setImageResource(drawableId)
         holder.img.contentDescription = actorName
+        holder.img.setImageResource(drawableId)
     }
 
     override fun getItemCount(): Int = items.size
+
+    override fun onViewRecycled(holder: VH) {
+        super.onViewRecycled(holder)
+        holder.img.setImageDrawable(null)
+    }
 }
