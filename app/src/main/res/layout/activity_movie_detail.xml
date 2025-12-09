@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/posterImageView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
             android:contentDescription="@string/poster"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
@@ -146,8 +146,7 @@
             android:overScrollMode="never"
             app:layout_constraintTop_toBottomOf="@id/castLabel"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="horizontal" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/trailerButton"

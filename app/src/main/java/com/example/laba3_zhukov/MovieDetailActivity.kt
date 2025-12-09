@@ -33,7 +33,16 @@ class MovieDetailActivity : AppCompatActivity() {
 
         val movieId = intent.getIntExtra("MOVIE_ID", -1)
         val movieTitle = intent.getStringExtra("MOVIE_TITLE")
+        val actorsRecycler = findViewById<RecyclerView>(R.id.actorsRecyclerView)
+        actorsRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        val actorsList = listOf(
+            Pair("Мэттью МакКонахи", R.drawable.actor_matthew),
+            Pair("Энн Хэтэуэй", R.drawable.actor_anne),
+            Pair("Джессика Честейн", R.drawable.actor_jessica)
+        )
+
+        actorsRecycler.adapter = ActorAdapter(actorsList)
         var found: Movie? = null
         if (movieId != -1) {
             found = MovieRepository.getMovieById(this, movieId)

@@ -30,4 +30,5 @@
     <string name="save_settings">Сохранить настройки</string>
     <string name="movie_title_placeholder">Название фильма</string>
     <string name="trailer_search_term">Трейлер</string>
+    <string name="actor_photo">Фото актёра</string>
 </resources>

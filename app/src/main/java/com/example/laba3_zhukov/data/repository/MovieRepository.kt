@@ -101,8 +101,8 @@ object MovieRepository {
                     Actor(nameRu = "Энн Хэтэуэй", nameEn = "Anne Hathaway", photo = "actor_anne"),
                     Actor(nameRu = "Джессика Честейн", nameEn = "Jessica Chastain", photo = "actor_jessica")
                 ),
-                descriptionRu = "Группа исследователей отправляется в космос...",
-                descriptionEn = "A team of explorers travel through a wormhole in space..."
+                descriptionRu = "Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.",
+                descriptionEn = "When droughts, dust storms, and plant extinctions lead humanity to a food crisis, a team of explorers and scientists travels through a wormhole (which presumably connects regions of space-time across great distances) to surpass the previous limitations for human space travel and find a planet with suitable conditions for humanity."
             ),
             Movie(
                 id = 2,
@@ -117,8 +117,8 @@ object MovieRepository {
                     Actor(nameRu = "Леонардо ДиКаприо", nameEn = "Leonardo DiCaprio", photo = "actor_leo"),
                     Actor(nameRu = "Джозеф Гордон-Левитт", nameEn = "Joseph Gordon-Levitt", photo = "actor_joseph")
                 ),
-                descriptionRu = "Вор, который крадёт тайны из подсознания...",
-                descriptionEn = "A thief who steals corporate secrets through the use of dream-sharing technology..."
+                descriptionRu = "Доминик Кобб и его напарник Артур — «извлекатели». Они занимаются корпоративным шпионажем с помощью экспериментальной военной технологии, позволяющей проникать в подсознание жертвы через мир снов.",
+                descriptionEn = "Dominic Cobb and his partner Arthur are \"extractors.\" They engage in corporate espionage using experimental military technology that allows them to enter a victim's subconscious through the dream world."
             ),
             Movie(
                 id = 3,
@@ -133,8 +133,8 @@ object MovieRepository {
                     Actor(nameRu = "Киану Ривз", nameEn = "Keanu Reeves", photo = "actor_keanu"),
                     Actor(nameRu = "Лоренс Фишбёрн", nameEn = "Laurence Fishburne", photo = "actor_laurence")
                 ),
-                descriptionRu = "Хакер Нео узнает правду о реальности...",
-                descriptionEn = "A computer hacker learns about the true nature of his reality..."
+                descriptionRu = "Нео узнаёт, что привычный мир — иллюзия, созданная разумными машинами для порабощения человечества. Планета погружена в вечный сумрак, города лежат в руинах. Люди порабощены машинами, которые используют их для производства энергии.",
+                descriptionEn = "Neo learns that the familiar world is an illusion created by intelligent machines to enslave humanity. The planet is plunged into eternal darkness, and cities lie in ruins. People are enslaved by machines that use them to produce energy."
             )
         )
     }
